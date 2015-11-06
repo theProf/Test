@@ -5,15 +5,13 @@
 #define HELP 2
 #define EXIT 3
 
-//global variables
-//int bandColor[3];
-
+int bandColor[3];
 
 int calculate()
 {
     long resistance =0;
     int i;
-    int bandColor[3];
+    
     printf("These are the color choices for the bands\n");
     printf("\t1. black\n");
     printf("\t2. brown\n");
@@ -63,12 +61,62 @@ int calculate()
         printf("Pleas enter the color for band 4\n");
         scanf("%d", &bandColor[3]);
     }
+    
+    
 
     printf("\n\t%d\n", bandColor[0]);
     printf("\t%d\n", bandColor[1]);
     printf("\t%d\n", bandColor[2]);
     printf("\t%d\n", bandColor[3]);
 }
+
+int multiplier(int bandThree)
+{
+    int multiplier;
+    switch(bandThree)
+        case 0:
+            multiplier = 1
+            break;
+        case 1:
+            multiplier = 10
+            break;
+        case 2:
+            multiplier = 100
+            break;
+        case 3:
+            multiplier = 1000
+            break;
+        case 4:
+            multiplier = 10000
+            break;
+        case 5:
+            multiplier = 100000
+            break;
+        case 6:
+            multiplier = 1000000
+            break;
+        case 7:
+            multiplier = 10000000
+            break;
+        case 8:
+            multiplier = 100000000
+            break;
+        case 9:
+            multiplier = 1000000000
+            break;
+        case 10:
+            multiplier = 0.1
+            break;
+        case 11:
+            multiplier = 0.01
+            break;
+        default:
+            printf("Please Enter a Valid Number.\n");
+            main();
+            break;
+}
+
+
 
 int help()
 {
@@ -104,4 +152,3 @@ int main()
             break;
     }
 }
-
