@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <math.h>
+
+#define CALCULATE 1
+#define HELP 2
+#define EXIT 3
+
+//global variables
+int bandColor[3];
+
+int calculate()
+{
+    //value for the first band
+    bandColor[0] = bandOne() -1;
+
+    //value for the second band
+    bandColor[1] = bandTwo() -1;
+
+    //value for band 3
+    bandColor[2] = bandThree()-1;
+
+    // value for band 4
+    bandColor[3] = bandFour() -1;
+
+
+    printf("The value of the resistor is\n");
+    printf("%d%dx10^%d ~ ", bandColor[0], bandColor[1], bandColor[2]);
+    main();
+}
+
+int bandOne()
+{
+    int band1 = 0;
+    printf("Pleas enter the color for band 1\n");
+    band1 = ohmTable();
+    while(1>band1 || 10< band1)
+    {
+        printf("Please enter a valid number\n");
+        printf("Pleas enter the color for band 1\n");
+        band1 = ohmTable();
+    }
+    return band1;
+}
+
+int bandTwo()
+{
+    int band2 = 0;
+    printf("please enter the color of band 2.\n");
+    band2 = ohmTable();
+    while(1>band2 || 10< band2)
+    {
+        printf("Please enter a valid number\n");
+        printf("please enter the color of band 2.\n");
+        band2 = ohmTable();
+    }
+    return band2;
+}
+
+int bandThree()
+{
+    printf("please enter the color of band 3.\n");
+    int band3 = 0;
+    band3 = ohmTable();
+    while(1>band3 || 12< band3)
+    {
+        printf("Please enter a valid number\n");
+        printf("please enter the color of band 3.\n");
+        band3 = ohmTable();
+    }
+    return band3;
+}
+
+int bandFour()
+{
+    printf("please enter the color of band 4.\n");
+    int band4 = 0;
+    band4 = ohmTable();
+    while(11>band4 || 12< band4)
+    {
+        printf("Please enter a valid number\n");
+    }
+    if(11==band4)
+    {
+        return band4;
+    }
+    else
+    {
+        return band4;
+    }
+}
+
+int resistanceValue()
+{
+    printf("%d\n", bandColor[0]);
+    printf("%d\n", bandColor[1]);
+    printf("10^%d\n", bandColor[2]);
+    printf("%d\n", bandColor[3]);
+}
+// colors of the bands
+int ohmTable()
+{
+    int colorChosen = 0;
+    printf("What is the color of the band\n");
+    printf("\t1. black\n");
+    printf("\t2. brown\n");
+    printf("\t3. red\n");
+    printf("\t4. orange\n");
+    printf("\t5. yellow\n");
+    printf("\t6. green\n");
+    printf("\t7. blue\n");
+    printf("\t8. violet\n");
+    printf("\t9. grey\n");
+    printf("\t10. white\n");
+    printf("\t11. gold\n");
+    printf("\t12. silver\n");
+
+    scanf("%d", &colorChosen);
+
+    return colorChosen;
+}
+
+int help()
+{
+    //to do
+    printf("you will be prompted to enter the color of each band 1 - 4.\n");
+    printf("The program will then give you the resistance in ohms of the resistor.\n\n");
+
+    return main();
+}
+
+int main()
+{
+    int userInput;
+    printf("Please choose an option.\n");
+    printf("\t1. calculate the resistance value\n");
+    printf("\t2. Help\n");
+    printf("\t3. Exit\n");
+    scanf("%d", &userInput);
+
+    switch(userInput)
+    {
+        case CALCULATE:
+            calculate();
+            break;
+        case HELP:
+            help();
+            break;
+        case EXIT:
+            printf("Have a Nice Day!\n");
+            break;
+        default:
+            printf("Please Enter a Valid Number.\n");
+            main();
+            break;
+    }
+}
