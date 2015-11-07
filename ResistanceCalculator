@@ -62,41 +62,15 @@ int calculate()
         scanf("%d", &bandColor[3]);
     }
 
-
-/*
-    printf("\nmultiplier returns %d\n", multiplier(bandColor[2]));
-
-    fuck = (float)(bandColor[0] + bandColor[1]*0.1); //* multiplier(bandColor[2]);
-
-
-    printf("\nthe band numbers are.\n");
-    printf("\n\t%d\n", bandColor[0]);
-    printf("\t%d\n", bandColor[1]);
-    printf("\t%d\n", bandColor[2]);
-    printf("\t%d\n", bandColor[3]);
-
-    printf("fuck returns %d\n", fuck);
-
-
-    printf("\nthe band numbers are.\n");
-    printf("\n\t%d\n", bandColor[0]);
-    printf("\t%d\n", bandColor[1]);
-    printf("\t%d\n", bandColor[2]);
-    printf("\t%d\n", bandColor[3]);
-*/
     printf("\nThe Value of the resistor is.\n");
 
-    /*this is suposed to make the last band (bandColor[3]
-        either 5% or 10% of the first band.
-        Its suposed to do the tolerance
-    */
     if(10 == bandColor[3])
     {
-        bandColor[3] = 5;
+        bandColor[3] = ((bandColor[0]*10)+bandColor[1])*0.05;
     }
     else
     {
-        bandColor[3] = 10;
+        bandColor[3] = ((bandColor[0]*10)+bandColor[1])*0.10;
     }
     metricScale(bandColor[2]);
 
@@ -111,7 +85,7 @@ int metricScale(int power)
             printf("%d%d ~ %d% ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 1:
-            printf("%d%d0 ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d%d0 ~ %d0 ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 2:
             printf("%d.%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
