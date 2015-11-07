@@ -69,6 +69,7 @@ int calculate()
     printf("\t%d\n", bandColor[1]);
     printf("\t%d\n", bandColor[2]);
     printf("\t%d\n", bandColor[3]);
+    printf("\t\t%d\n", multiplier(bandColor[3]));
     printf("%d", fuck);
 }
 
@@ -118,6 +119,7 @@ int multiplier(int bandThree)
             main();
             break;
     }
+    return multiplier;
 }
 
 
