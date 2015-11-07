@@ -64,13 +64,15 @@ int calculate()
 
     printf("\nThe Value of the resistor is.\n");
 
-    if(10 == bandColor[3])
+     if(10 == bandColor[3])
     {
-        bandColor[3] = ((bandColor[0]*10)+bandColor[1])*0.05;
+        bandColor[3]=5;
+         tolerance = ((((float)bandColor[0]*10.0) + (float)bandColor[1]) * pow(10, bandColor[2])) * ((float)bandColor[3]/100.0);
     }
     else
     {
-        bandColor[3] = ((bandColor[0]*10)+bandColor[1])*0.10;
+        bandColor[3]=10;
+         tolerance = ((((float)bandColor[0]*10.0) + (float)bandColor[1]) * pow(10, bandColor[2])) * ((float)bandColor[3]/100.0);
     }
     metricScale(bandColor[2]);
 
