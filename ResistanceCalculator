@@ -13,22 +13,22 @@ int calculate()
     int fuck;
 
     printf("These are the color choices for the bands\n");
-    printf("\t1. black\n");
-    printf("\t2. brown\n");
-    printf("\t3. red\n");
-    printf("\t4. orange\n");
-    printf("\t5. yellow\n");
-    printf("\t6. green\n");
-    printf("\t7. blue\n");
-    printf("\t8. violet\n");
-    printf("\t9. grey\n");
-    printf("\t10. white\n");
-    printf("\t11. gold\n");
-    printf("\t12. silver\n");
+    printf("\t0. black\n");
+    printf("\t1. brown\n");
+    printf("\t2. red\n");
+    printf("\t3. orange\n");
+    printf("\t4. yellow\n");
+    printf("\t5. green\n");
+    printf("\t6. blue\n");
+    printf("\t7. violet\n");
+    printf("\t8. grey\n");
+    printf("\t9. white\n");
+    printf("\t10. gold\n");
+    printf("\t11. silver\n");
 
     printf("Pleas enter the color for band 1\n");
     scanf("%d", &bandColor[0]);
-    while(1>bandColor[0] || 10< bandColor[0])
+    while(0>bandColor[0] || 9< bandColor[0])
     {
         printf("Please enter a valid number\n");
         printf("Pleas enter the color for band 1\n");
@@ -37,7 +37,7 @@ int calculate()
 
     printf("Pleas enter the color for band 2\n");
     scanf("%d", &bandColor[1]);
-    while(1>bandColor[1] || 10< bandColor[1])
+    while(0>bandColor[1] || 9< bandColor[1])
     {
         printf("Please enter a valid number\n");
         printf("Pleas enter the color for band 2\n");
@@ -46,7 +46,7 @@ int calculate()
 
     printf("Pleas enter the color for band 3\n");
     scanf("%d", &bandColor[2]);
-    while(1>bandColor[2] || 12< bandColor[2])
+    while(0>bandColor[2] || 11< bandColor[2])
     {
         printf("Please enter a valid number\n");
         printf("Pleas enter the color for band 3\n");
@@ -55,16 +55,19 @@ int calculate()
 
     printf("Pleas enter the color for band 4\n");
     scanf("%d", &bandColor[3]);
-    while(11>bandColor[3] || 12< bandColor[3])
+    while(10>bandColor[3] || 11< bandColor[3])
     {
         printf("Please enter a valid number\n");
         printf("Pleas enter the color for band 4\n");
         scanf("%d", &bandColor[3]);
     }
 
+
+/*
     printf("\nmultiplier returns %d\n", multiplier(bandColor[2]));
 
-    fuck = (bandColor[0] + bandColor[1]*0.1); //* multiplier(bandColor[2]);
+    fuck = (float)(bandColor[0] + bandColor[1]*0.1); //* multiplier(bandColor[2]);
+
 
     printf("\nthe band numbers are.\n");
     printf("\n\t%d\n", bandColor[0]);
@@ -73,58 +76,78 @@ int calculate()
     printf("\t%d\n", bandColor[3]);
 
     printf("fuck returns %d\n", fuck);
+
+
+    printf("\nthe band numbers are.\n");
+    printf("\n\t%d\n", bandColor[0]);
+    printf("\t%d\n", bandColor[1]);
+    printf("\t%d\n", bandColor[2]);
+    printf("\t%d\n", bandColor[3]);
+*/
+    printf("\nThe Value of the resistor is.\n");
+    
+    /*this is suposed to make the last band (bandColor[3]
+        either 5% or 10% of the first band.
+        Its suposed to do the tolerance
+    */
+    if(10 == bandColor[3])
+    {
+        bandColor[3] = (float)bandColor[0]*0.05;
+    }
+    else
+    {
+        bandColor[3] = (float)bandColor[0] * 0.10;
+    }
+    metricScale(bandColor[2]);
+
+    main();
 }
 
-int multiplier(int bandThree)
+int metricScale(int power)
 {
-    int multiplier=0;
-    switch(bandThree)
+    switch(power)
     {
         case 0:
-            printf("Hi\n");
-            multiplier = 1;
+            printf("%d%d ~ %d\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 1:
-            multiplier = 10;
+            printf("%d%d0 ~ %d\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 2:
-            multiplier = 100;
+            printf("%d.%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 3:
-            multiplier = 1000;
+            printf("%d%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 4:
-            multiplier = 10000;
+            printf("%d%d0 ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 5:
-            multiplier = 100000;
+            printf("%d.%d ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 6:
-            multiplier = 1000000;
+            printf("%d%d ~ %d M-ohmd\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 7:
-            multiplier = 10000000;
+            printf("%d%d0 ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 8:
-            multiplier = 100000000;
+            printf("%d.%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 9:
-            multiplier = 1000000000;
+            printf("%d%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 10:
-            multiplier = 0.1;
+            printf("%d.%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         case 11:
-            multiplier = 0.01;
+            printf("0.%d%d ~ %d ohma\n\n", bandColor[0],bandColor[1], bandColor[4]);
             break;
         default:
-            printf("Please Enter a Valid Number.\n");
+            printf("There is an error!\n\n");
             break;
     }
-    return multiplier;
 }
-
-
 
 int help()
 {
