@@ -62,23 +62,26 @@ int calculate()
         scanf("%d", &bandColor[3]);
     }
 
-    fuck = (bandColor[0]+ 0.1 *bandColor[1]) * multiplier(bandColor[3]);
+    printf("\nmultiplier returns %d\n", multiplier(bandColor[2]));
 
+    fuck = (bandColor[0] + bandColor[1]*0.1); //* multiplier(bandColor[2]);
 
+    printf("\nthe band numbers are.\n");
     printf("\n\t%d\n", bandColor[0]);
     printf("\t%d\n", bandColor[1]);
     printf("\t%d\n", bandColor[2]);
     printf("\t%d\n", bandColor[3]);
-    printf("\t\t%d\n", multiplier(bandColor[3]));
-    printf("%d", fuck);
+
+    printf("fuck returns %d\n", fuck);
 }
 
 int multiplier(int bandThree)
 {
-    int multiplier;
+    int multiplier=0;
     switch(bandThree)
     {
         case 0:
+            printf("Hi\n");
             multiplier = 1;
             break;
         case 1:
@@ -116,7 +119,6 @@ int multiplier(int bandThree)
             break;
         default:
             printf("Please Enter a Valid Number.\n");
-            main();
             break;
     }
     return multiplier;
