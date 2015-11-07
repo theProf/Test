@@ -82,37 +82,37 @@ int metricScale(int power)
     switch(power)
     {
         case 0:
-            printf("%d%d ~ %d% ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 1:
             printf("%d%d0 ~ %d0 ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 2:
-            printf("%d.%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d.%d ~ 0.%d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 3:
             printf("%d%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 4:
-            printf("%d%d0 ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d%d0 ~ %d0 K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 5:
-            printf("%d.%d ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d.%d ~ 0.%d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 6:
             printf("%d%d ~ %d M-ohmd\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 7:
-            printf("%d%d0 ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d%d0 ~ %d0 M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 8:
-            printf("%d.%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d.%d ~ 0.%d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 9:
-            printf("%d%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d%d ~ 0.0%d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 10:
-            printf("%d.%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
+            printf("%d.%d ~ 0.00%d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 11:
             printf("0.%d%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
