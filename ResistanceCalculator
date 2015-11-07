@@ -5,14 +5,102 @@
 #define HELP 2
 #define EXIT 3
 
+//global variables
 int bandColor[3];
 
 int calculate()
 {
-    long resistance =0;
-    int fuck;
+    int i, multiplier;
+    //value for the first band
+    bandColor[0] = bandOne() -1.0;
 
-    printf("These are the color choices for the bands\n");
+    //value for the second band
+    bandColor[1] = bandTwo() -1.0;
+
+    //value for band 3
+    bandColor[2] = bandThree()-1.0;
+
+    // value for band 4
+    bandColor[3] = bandFour() -1.0;
+
+    printf("The value of the resistor is\n");
+    printf("%d", (bandColor[0] + bandColor[1])*pow(10,bandColor[2]));
+    main();
+}
+
+int bandOne()
+{
+    int band1 = 0;
+    printf("Pleas enter the color for band 1\n");
+    band1 = ohmTable();
+    while(1>band1 || 10< band1)
+    {
+        printf("Please enter a valid number\n");
+        printf("Pleas enter the color for band 1\n");
+        band1 = ohmTable();
+    }
+    return band1;
+}
+
+int bandTwo()
+{
+    int band2 = 0;
+    printf("please enter the color of band 2.\n");
+    band2 = ohmTable();
+    while(1>band2 || 10< band2)
+    {
+        printf("Please enter a valid number\n");
+        printf("please enter the color of band 2.\n");
+        band2 = ohmTable();
+    }
+    return band2;
+}
+
+int bandThree()
+{
+    printf("please enter the color of band 3.\n");
+    int band3 = 0;
+    band3 = ohmTable();
+    while(1>band3 || 12< band3)
+    {
+        printf("Please enter a valid number\n");
+        printf("please enter the color of band 3.\n");
+        band3 = ohmTable();
+    }
+    return band3;
+}
+
+int bandFour()
+{
+    printf("please enter the color of band 4.\n");
+    int band4 = 0;
+    band4 = ohmTable();
+    while(11>band4 || 12< band4)
+    {
+        printf("Please enter a valid number\n");
+    }
+    if(11==band4)
+    {
+        return band4;
+    }
+    else
+    {
+        return band4;
+    }
+}
+
+int resistanceValue()
+{
+    printf("%d\n", bandColor[0]);
+    printf("%d\n", bandColor[1]);
+    printf("10^%d\n", bandColor[2]);
+    printf("%d\n", bandColor[3]);
+}
+// colors of the bands
+int ohmTable()
+{
+    int colorChosen = 0;
+    printf("What is the color of the band\n");
     printf("\t1. black\n");
     printf("\t2. brown\n");
     printf("\t3. red\n");
@@ -26,108 +114,14 @@ int calculate()
     printf("\t11. gold\n");
     printf("\t12. silver\n");
 
-    printf("Pleas enter the color for band 1\n");
-    scanf("%d", &bandColor[0]);
-    while(1>bandColor[0] || 10< bandColor[0])
-    {
-        printf("Please enter a valid number\n");
-        printf("Pleas enter the color for band 1\n");
-        scanf("%d", &bandColor[0]);
-    }
+    scanf("%d", &colorChosen);
 
-    printf("Pleas enter the color for band 2\n");
-    scanf("%d", &bandColor[1]);
-    while(1>bandColor[1] || 10< bandColor[1])
-    {
-        printf("Please enter a valid number\n");
-        printf("Pleas enter the color for band 2\n");
-        scanf("%d", &bandColor[1]);
-    }
-
-    printf("Pleas enter the color for band 3\n");
-    scanf("%d", &bandColor[2]);
-    while(1>bandColor[2] || 12< bandColor[2])
-    {
-        printf("Please enter a valid number\n");
-        printf("Pleas enter the color for band 3\n");
-        scanf("%d", &bandColor[2]);
-    }
-
-    printf("Pleas enter the color for band 4\n");
-    scanf("%d", &bandColor[3]);
-    while(11>bandColor[3] || 12< bandColor[3])
-    {
-        printf("Please enter a valid number\n");
-        printf("Pleas enter the color for band 4\n");
-        scanf("%d", &bandColor[3]);
-    }
-
-    printf("\nmultiplier returns %d\n", multiplier(bandColor[2]));
-
-    fuck = (bandColor[0] + bandColor[1]*0.1); //* multiplier(bandColor[2]);
-
-    printf("\nthe band numbers are.\n");
-    printf("\n\t%d\n", bandColor[0]);
-    printf("\t%d\n", bandColor[1]);
-    printf("\t%d\n", bandColor[2]);
-    printf("\t%d\n", bandColor[3]);
-
-    printf("fuck returns %d\n", fuck);
+    return colorChosen;
 }
-
-int multiplier(int bandThree)
-{
-    int multiplier=0;
-    switch(bandThree)
-    {
-        case 0:
-            printf("Hi\n");
-            multiplier = 1;
-            break;
-        case 1:
-            multiplier = 10;
-            break;
-        case 2:
-            multiplier = 100;
-            break;
-        case 3:
-            multiplier = 1000;
-            break;
-        case 4:
-            multiplier = 10000;
-            break;
-        case 5:
-            multiplier = 100000;
-            break;
-        case 6:
-            multiplier = 1000000;
-            break;
-        case 7:
-            multiplier = 10000000;
-            break;
-        case 8:
-            multiplier = 100000000;
-            break;
-        case 9:
-            multiplier = 1000000000;
-            break;
-        case 10:
-            multiplier = 0.1;
-            break;
-        case 11:
-            multiplier = 0.01;
-            break;
-        default:
-            printf("Please Enter a Valid Number.\n");
-            break;
-    }
-    return multiplier;
-}
-
-
 
 int help()
 {
+    //to do
     printf("you will be prompted to enter the color of each band 1 - 4.\n");
     printf("The program will then give you the resistance in ohms of the resistor.\n\n");
 
