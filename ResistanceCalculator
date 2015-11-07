@@ -85,18 +85,18 @@ int calculate()
     printf("\t%d\n", bandColor[3]);
 */
     printf("\nThe Value of the resistor is.\n");
-    
+
     /*this is suposed to make the last band (bandColor[3]
         either 5% or 10% of the first band.
         Its suposed to do the tolerance
     */
     if(10 == bandColor[3])
     {
-        bandColor[3] = (float)bandColor[0]*0.05;
+        bandColor[3] = 5;
     }
     else
     {
-        bandColor[3] = (float)bandColor[0] * 0.10;
+        bandColor[3] = 10;
     }
     metricScale(bandColor[2]);
 
@@ -108,40 +108,40 @@ int metricScale(int power)
     switch(power)
     {
         case 0:
-            printf("%d%d ~ %d\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d ~ %d% ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 1:
-            printf("%d%d0 ~ %d\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d0 ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 2:
-            printf("%d.%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d.%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 3:
-            printf("%d%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 4:
-            printf("%d%d0 ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d0 ~ %d K-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 5:
-            printf("%d.%d ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d.%d ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 6:
-            printf("%d%d ~ %d M-ohmd\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d ~ %d M-ohmd\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 7:
-            printf("%d%d0 ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d0 ~ %d M-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 8:
-            printf("%d.%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d.%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 9:
-            printf("%d%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d%d ~ %d G-ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 10:
-            printf("%d.%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("%d.%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         case 11:
-            printf("0.%d%d ~ %d ohma\n\n", bandColor[0],bandColor[1], bandColor[4]);
+            printf("0.%d%d ~ %d ohms\n\n", bandColor[0],bandColor[1], bandColor[3]);
             break;
         default:
             printf("There is an error!\n\n");
