@@ -113,7 +113,8 @@ char *getScale(void) {
 
 int metricScale(void)
 {
-    float power = (bandColor[2]+1) % 3;
+    float power = bandColor[2] == 10 ? 0 :
+                  bandColor[2] == 11 ? -1 : (bandColor[2]+1) % 3;
     float value = ((float)bandColor[0] + (float)bandColor[1]/10.0) * pow(10, power);
     tolerance = value * tolerance;
 
